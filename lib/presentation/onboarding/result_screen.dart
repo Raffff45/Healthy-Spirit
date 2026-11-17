@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:healthy_spirit/domain/calculators/nutrition_calculator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../data/models/goal.dart';
 import '../../data/repositories/profile_repository.dart';
-import '../../domain/calculators/nutrition_calculator.dart';
 import '../diary/diary_providers.dart';
 import 'onboarding_provider.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:healthy_spirit/domain/achievements/streak_calculator.dart';
+import 'package:healthy_spirit/domain/calculators/food_calculator.dart';
 import '../../data/db/app_database.dart';
 import '../../data/repositories/diary_repository.dart';
 import '../../data/repositories/profile_repository.dart';
-import '../../domain/achievements/streak_calculator.dart';
-import '../../domain/calculators/food_calculator.dart';
 
 /// Выбранный в дневнике день
 class SelectedDateNotifier extends Notifier<DateTime> {

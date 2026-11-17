@@ -1,7 +1,8 @@
 import 'dart:math';
 
-import '../../data/db/app_database.dart';
-import '../../data/models/meal_type.dart';
+import 'package:healthy_spirit/data/db/app_database.dart';
+import 'package:healthy_spirit/data/models/meal_type.dart';
+
 import '../calculators/food_calculator.dart';
 
 /// Продукт с рассчитанной граммовкой в сгенерированном меню

@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../domain/calculators/nutrition_calculator.dart';
+import 'package:healthy_spirit/domain/calculators/nutrition_calculator.dart';
 import '../db/app_database.dart';
 import '../db/database_provider.dart';
 import '../models/activity_level.dart';

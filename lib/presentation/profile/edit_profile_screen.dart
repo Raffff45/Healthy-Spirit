@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:healthy_spirit/domain/calculators/nutrition_calculator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../data/db/app_database.dart';
 import '../../data/models/activity_level.dart';
 import '../../data/models/gender.dart';
 import '../../data/models/goal.dart';
 import '../../data/repositories/profile_repository.dart';
-import '../../domain/calculators/nutrition_calculator.dart';
 import '../../widgets/avatar_widgets.dart';
 import '../../widgets/number_stepper.dart';
 import '../../widgets/phone_width.dart';

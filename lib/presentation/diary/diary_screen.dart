@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:healthy_spirit/domain/calculators/food_calculator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/format.dart';
 import '../../data/models/meal_type.dart';
 import '../../data/repositories/diary_repository.dart';
-import '../../domain/calculators/food_calculator.dart';
 import '../../widgets/phone_width.dart';
 import '../catalog/add_product_sheet.dart';
 import '../catalog/catalog_screen.dart';

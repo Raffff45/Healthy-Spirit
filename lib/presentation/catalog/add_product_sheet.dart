@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:healthy_spirit/domain/calculators/food_calculator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/format.dart';
 import '../../data/db/app_database.dart';
 import '../../data/models/meal_type.dart';
 import '../../data/repositories/diary_repository.dart';
-import '../../domain/calculators/food_calculator.dart';
 import '../diary/diary_providers.dart';
 
 /// Открывает панель: граммы, расчёт КБЖУ, выбор приёма пищи.

@@ -1,6 +1,7 @@
-import '../../data/models/activity_level.dart';
-import '../../data/models/gender.dart';
-import '../../data/models/goal.dart';
+import 'package:healthy_spirit/data/models/activity_level.dart';
+import 'package:healthy_spirit/data/models/gender.dart';
+import 'package:healthy_spirit/data/models/goal.dart';
+
 
 /// Результат расчёта нормы
 class NutritionResult {

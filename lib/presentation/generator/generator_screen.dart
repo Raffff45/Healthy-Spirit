@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:healthy_spirit/domain/generator/menu_generator.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/format.dart';
 import '../../data/db/app_database.dart';
 import '../../data/repositories/diary_repository.dart';
 import '../../data/repositories/product_repository.dart';
-import '../../domain/generator/menu_generator.dart';
 import '../../widgets/phone_width.dart';
 import '../diary/diary_providers.dart';
 
