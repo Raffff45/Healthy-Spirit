@@ -8,8 +8,10 @@ class AppAssets {
   static const man = 'assets/images/man.png';
   static const woman = 'assets/images/woman.png';
   static const game = 'assets/images/game.png';
+  static const menu = 'assets/images/menu.png';
+  static const profile = 'assets/images/profile.png';
 
-  static const all = <String>[grass1, grass2, grass3, man, woman, game];
+static const all = <String>[grass1, grass2, grass3, man, woman, game, menu, profile];
 
   /// Фон, который соответствует выбранному полу.
   static String forGender(Gender gender) =>

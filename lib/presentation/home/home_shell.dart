@@ -27,12 +27,12 @@ class _HomeShellState extends State<HomeShell> {
 
   /// Фон для каждой вкладки (по порядку вкладок)
   static const _backgrounds = <String>[
-    AppAssets.grass1,
-    AppAssets.grass2,
-    AppAssets.grass3,
-    AppAssets.game,
-    AppAssets.grass1,
-  ];
+  AppAssets.grass1,
+  AppAssets.grass2,
+  AppAssets.menu,      // было grass3, это вкладка «Генератор»
+  AppAssets.game,
+  AppAssets.profile,   // было grass1, это вкладка «Профиль»
+];
 
   @override
   Widget build(BuildContext context) {
