@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Описание достижения: за сколько дней подряд с закрытой дневной целью
 class AchievementDef {

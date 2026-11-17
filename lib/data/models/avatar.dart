@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Готовая аватарка: идентификатор хранится в базе и в облаке
 class AvatarDef {

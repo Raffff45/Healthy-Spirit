@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum MealType {
   breakfast('Завтрак', Icons.wb_sunny_rounded, 0.25),

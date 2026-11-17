@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import '../catalog/catalog_screen.dart';
 import '../diary/diary_screen.dart';
 import '../generator/generator_screen.dart';
