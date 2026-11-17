@@ -30,7 +30,7 @@ class _HomeShellState extends State<HomeShell> {
     AppAssets.grass1,
     AppAssets.grass2,
     AppAssets.grass3,
-    AppAssets.grass2,
+    AppAssets.game,
     AppAssets.grass1,
   ];
 

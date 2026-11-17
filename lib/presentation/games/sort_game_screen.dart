@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'package:healthy_spirit/core/theme/app_assets.dart';
+import 'package:healthy_spirit/widgets/app_background.dart';
 import 'package:material_ui/material_ui.dart';
 import '../../core/theme/app_colors.dart';
 import '../../widgets/phone_width.dart';
@@ -102,6 +104,14 @@ class _SortGameScreenState extends State<SortGameScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return AppBackground(
+      asset: AppAssets.game,
+      dim: 0.35,
+      child: _buildScaffold(context),
+    );
+  }
+
+  Widget _buildScaffold(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Полезное или вредное')),
       body: SafeArea(
@@ -155,7 +165,7 @@ class _SortGameScreenState extends State<SortGameScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: AppColors.surface,
+                  color: AppColors.surface.withValues(alpha: 0.7),
                   borderRadius: BorderRadius.circular(28),
                   border: Border.all(color: border, width: 3),
                 ),

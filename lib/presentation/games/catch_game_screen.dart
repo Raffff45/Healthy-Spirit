@@ -2,7 +2,9 @@ import 'dart:math';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
+import '../../core/theme/app_assets.dart';
 import '../../core/theme/app_colors.dart';
+import '../../widgets/app_background.dart';
 import '../../widgets/phone_width.dart';
 import 'games_common.dart';
 import 'games_data.dart';
@@ -184,6 +186,14 @@ class _CatchGameScreenState extends State<CatchGameScreen>
 
   @override
   Widget build(BuildContext context) {
+    return AppBackground(
+      asset: AppAssets.game,
+      dim: 0.35,
+      child: _buildScaffold(context),
+    );
+  }
+
+  Widget _buildScaffold(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Поймай полезное')),
       body: SafeArea(
@@ -199,7 +209,7 @@ class _CatchGameScreenState extends State<CatchGameScreen>
                   borderRadius: BorderRadius.circular(24),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: AppColors.surface,
+                      color: AppColors.surface.withValues(alpha: 0.55),
                       border: Border.all(color: AppColors.surfaceLight),
                       borderRadius: BorderRadius.circular(24),
                     ),

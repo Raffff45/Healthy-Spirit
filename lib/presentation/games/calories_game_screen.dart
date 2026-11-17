@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:material_ui/material_ui.dart';
+import '../../core/theme/app_assets.dart';
 import '../../core/theme/app_colors.dart';
+import '../../widgets/app_background.dart';
 import '../../widgets/phone_width.dart';
 import 'games_common.dart';
 import 'games_data.dart';
@@ -97,6 +99,14 @@ class _CaloriesGameScreenState extends State<CaloriesGameScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return AppBackground(
+      asset: AppAssets.game,
+      dim: 0.35,
+      child: _buildScaffold(context),
+    );
+  }
+
+  Widget _buildScaffold(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Что калорийнее?')),
       body: SafeArea(

@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart'
     show Supabase, SupabaseClient, SignOutScope;
 
+import '../../core/utils/avatar_photo_store.dart';
 import '../db/app_database.dart';
 import '../db/database_provider.dart';
 
@@ -161,8 +162,9 @@ class SyncService {
     _debounce = Timer(const Duration(seconds: 2), () async {
       try {
         await push();
-      } catch (_) {
-        // Нет сети: изменение останется помеченным и уйдёт позже
+      } catch (e) {
+        // ignore: avoid_print
+        print('SYNC PUSH ERROR: $e');
       }
     });
   }
@@ -195,7 +197,20 @@ class SyncService {
       await _client.from('meal_entries').delete().gte('id', 0);
       await _client.from('weight_entries').delete().gte('id', 0);
       await _client.from('profiles').delete().neq('user_id', _nilUuid);
+      try {
+        await AvatarPhotoStore.syncRemote('');
+      } catch (_) {}
       return;
+    }
+
+    // Фото аватарки уходит в Storage; ошибка не должна мешать отправке данных
+    try {
+      // ignore: avoid_print
+      print('AVATAR value: ${profile.avatar}');
+      await AvatarPhotoStore.syncRemote(profile.avatar);
+    } catch (e) {
+      // ignore: avoid_print
+      print('AVATAR UPLOAD ERROR: $e');
     }
 
     final weights = await db.select(db.weightEntries).get();
@@ -259,6 +274,7 @@ class SyncService {
         await db.delete(db.weightEntries).go();
         await db.delete(db.userProfiles).go();
       });
+      await AvatarPhotoStore.cleanupExcept('');
       await prefs.remove(_pendingKey);
       await _client.auth.signOut(scope: SignOutScope.local);
       await Future<void>.delayed(const Duration(milliseconds: 300));

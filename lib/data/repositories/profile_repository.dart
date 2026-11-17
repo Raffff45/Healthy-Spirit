@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:healthy_spirit/domain/calculators/nutrition_calculator.dart';
+import '../../core/utils/avatar_photo_store.dart';
 import '../db/app_database.dart';
 import '../db/database_provider.dart';
 import '../models/activity_level.dart';
@@ -67,6 +68,9 @@ class ProfileRepository {
             );
       }
     });
+
+    // удаляем файлы фото, которые больше не используются
+    await AvatarPhotoStore.cleanupExcept(avatar);
   }
 
   /// Записать новый вес: обновляет профиль, пересчитывает норму
@@ -115,6 +119,7 @@ class ProfileRepository {
       await db.delete(db.weightEntries).go();
       await db.delete(db.userProfiles).go();
     });
+    await AvatarPhotoStore.cleanupExcept('');
   }
 }
 

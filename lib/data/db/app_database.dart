@@ -83,4 +83,6 @@ class AppDatabase extends _$AppDatabase {
           }
         },
       );
+
+  ResultSetImplementation<HasResultSet, dynamic>? get meals => null;
 }
