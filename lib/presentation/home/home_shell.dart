@@ -1,4 +1,6 @@
 import 'package:material_ui/material_ui.dart';
+import '../../core/theme/app_assets.dart';
+import '../../widgets/app_background.dart';
 import '../catalog/catalog_screen.dart';
 import '../diary/diary_screen.dart';
 import '../games/games_screen.dart';
@@ -23,8 +25,24 @@ class _HomeShellState extends State<HomeShell> {
     ProfileScreen(),
   ];
 
+  /// Фон для каждой вкладки (по порядку вкладок)
+  static const _backgrounds = <String>[
+    AppAssets.grass1,
+    AppAssets.grass2,
+    AppAssets.grass3,
+    AppAssets.grass2,
+    AppAssets.grass1,
+  ];
+
   @override
   Widget build(BuildContext context) {
+    return AppBackground(
+      asset: _backgrounds[_index],
+      child: _buildScaffold(),
+    );
+  }
+
+  Widget _buildScaffold() {
     return Scaffold(
       body: IndexedStack(index: _index, children: _pages),
       bottomNavigationBar: NavigationBar(

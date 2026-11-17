@@ -1,14 +1,16 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../core/theme/app_assets.dart';
 import '../../core/theme/app_colors.dart';
 import '../../data/models/activity_level.dart';
 import '../../data/models/gender.dart';
 import '../../data/models/goal.dart';
+import '../../widgets/app_background.dart';
 import '../../widgets/avatar_widgets.dart';
 import '../../widgets/number_stepper.dart';
 import 'onboarding_provider.dart';
-
+  
 class SurveyScreen extends ConsumerStatefulWidget {
   const SurveyScreen({super.key});
 
@@ -38,6 +40,21 @@ class _SurveyScreenState extends ConsumerState<SurveyScreen> {
     final needsTarget = s.goal != null && s.goal != Goal.maintain;
     final canContinue = s.isTargetValid && s.isNameValid;
 
+    // Фон зависит от выбранного пола (плавно перетекает при переключении)
+    return AppBackground(
+      asset: AppAssets.forGender(s.gender),
+      dim: 0.35,
+      child: _buildScaffold(context, s, n, needsTarget, canContinue),
+    );
+  }
+
+  Widget _buildScaffold(
+    BuildContext context,
+    OnboardingState s,
+    OnboardingNotifier n,
+    bool needsTarget,
+    bool canContinue,
+  ) {
     return Scaffold(
       appBar: AppBar(title: const Text('Расскажи о себе')),
       body: SafeArea(
