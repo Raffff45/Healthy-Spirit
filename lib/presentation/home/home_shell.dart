@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import '../catalog/catalog_screen.dart';
 import '../diary/diary_screen.dart';
+import '../games/games_screen.dart';
 import '../generator/generator_screen.dart';
 import '../profile/profile_screen.dart';
 
@@ -18,6 +19,7 @@ class _HomeShellState extends State<HomeShell> {
     DiaryScreen(),
     CatalogScreen(),
     GeneratorScreen(),
+    GamesScreen(),
     ProfileScreen(),
   ];
 
@@ -43,6 +45,11 @@ class _HomeShellState extends State<HomeShell> {
             icon: Icon(Icons.auto_awesome_outlined),
             selectedIcon: Icon(Icons.auto_awesome_rounded),
             label: 'Генератор',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.sports_esports_outlined),
+            selectedIcon: Icon(Icons.sports_esports_rounded),
+            label: 'Игры',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline_rounded),
